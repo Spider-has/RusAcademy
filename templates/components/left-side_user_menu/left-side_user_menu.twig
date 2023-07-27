@@ -1,0 +1,41 @@
+<div class = "user-menu">
+    <div class = "info-menu">
+        <div class = "info-menu__avatar">
+            <img class = "" src = "
+            {% if avatarUrl is empty %}
+                ./templates/icons/default-avatar-icon.svg
+            {% else %}
+                {{ avatarUrl }}
+            {% endif %}"
+            alt = "аватар"/>
+        </div>
+        <div class = "info-menu__user-data">
+            <h2 class = "header-default">{{ surname }} {{ name }}</h2>
+            <span class = "text-default">Ученик {{ class }} класса</span>
+            <span class = "text-default-sm">{{ email }}</span>
+        </div>
+    </div>
+
+    <div class = "action-menu">
+        <div class = "action-menu__score">
+            <h4 class = "text-default"> Всего баллов: </h4>
+            <span class = "points-default">{{ userScore }}</span>
+        </div>
+        <div class = "action-menu__navigate-bar">
+            <div class = "action-menu__user-settings">
+                <a class = "action-menu__link">
+                    <img class = "" src = "./templates/icons/achievement.svg" alt = "достижения"/>
+                    <h4 class = "text-default">Достижения</h4>
+                </a>
+                <a class = "action-menu__link">
+                    <img class = "" src = "./templates/icons/profile.svg" alt = "кабинет"/>
+                    <h4 class = "text-default">Личный кабинет</h4>
+                </a>
+            </div>
+            <a class = "action-menu__link">
+                <img class = "" src = "{{ "./templates/icons/exit.svg" }}" alt = "выход"/>
+                <h4 class = "text-default">Выход из кабинета</h4>
+            </a>
+        </div>
+    </div>
+</div>

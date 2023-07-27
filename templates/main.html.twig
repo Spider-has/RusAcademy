@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href= "{{'./templates/components/left-side_user_menu/left-side_user_menu.scss'}}" type="text/css" rel="stylesheet/>
+{% endblock %}
+
+{% block content %}
+    {% include './components/left-side_user_menu/left-side_user_menu.twig' with {
+        surname: "Иванов",
+        name: "Артем",
+        class: "5",
+        email: "ivanovartem@gmail.com",
+        userScore: "50",
+    } %}
+{% endblock %}
