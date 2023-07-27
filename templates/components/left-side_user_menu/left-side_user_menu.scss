@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.user-menu{
+  width: 26%;
+  max-width: 488px;
+  min-width: 245px;
+  height: 100vh;
+  padding: 139px 0 116px 0;
+
+  display: flex;
+  justify-content: center;
+
+  color: #F4F7FD;
+
+  background-color: #002154;
+}
+
+.info-menu{
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  align-items: center;
+
+  &__avatar{
+
+  }
+
+  &__user-data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+.action-menu{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  &__score{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  &__navigate-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 37%;
+  }
+
+  &__user-settings{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  &__link{
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+}
+
+.header-default{
+  font-family: Raleway, sans-serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 1px;
+}
+
+.text-default{
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 1px;
+}
+
+.text-default-sm{
+  font-family: Raleway, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 1px;
+}
