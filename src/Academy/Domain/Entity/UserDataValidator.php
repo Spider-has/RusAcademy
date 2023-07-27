@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Om\Domain\Entity;
+namespace App\Academy\Domain\Entity;
 
 use App\Academy\Utility\Exception\IncorrectDataException;
 

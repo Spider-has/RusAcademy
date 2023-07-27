@@ -2,8 +2,6 @@
 
 namespace App\Academy\Domain\Entity;
 
-use App\Om\Domain\Entity\UserDataValidator;
-
 class User
 {
     private int $id;

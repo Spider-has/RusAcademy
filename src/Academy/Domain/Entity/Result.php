@@ -2,7 +2,6 @@
 
 namespace App\Academy\Domain\Entity;
 
-use App\Om\Domain\Entity\UserDataValidator;
 use DateTime;
 
 class Result
