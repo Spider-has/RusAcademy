@@ -38,7 +38,7 @@ class Game
         $this->maxScore = $maxScore;
     }
 
-    public function appendResultToList(int $resultId): void
+    public function addResultToList(int $resultId): void
     {
         if (!in_array($resultId, $this->userResultList)) {
             $this->userResultList[] = $resultId;

@@ -6,22 +6,21 @@ use App\Academy\Utility\Exception\IncorrectDataException;
 
 class UserDataValidator
 {
-    private const STRING_REGEX = "/^[a-zA-ZА-яёЁ]+$/u";
-    private const VALIDATE_PASSWORD = "^(?=.*\\d)(?=.*[A-Z]).{6,16}^";
-    private const MAX_USER_RESULT = 100;
+    private const USER_NAME_REGEX = "/^[a-zA-ZА-яёЁ]+$/u";
+    private const USER_PASSWORD_REGEX = "^(?=.*\\d)(?=.*[A-Z]).{6,16}^";
 
     /**
      * @throws IncorrectDataException
      */
     public function checkName(string $firstName, string $lastName, ?string $patronymic): void
     {
-        $checkCorrectFirstName = preg_match(self::STRING_REGEX, $firstName);
-        $checkCorrectLastName = preg_match(self::STRING_REGEX, $lastName);
+        $checkCorrectFirstName = preg_match(self::USER_NAME_REGEX, $firstName);
+        $checkCorrectLastName = preg_match(self::USER_NAME_REGEX, $lastName);
         $checkCorrectPatronymic =
             (
                 ($patronymic === "") ||
                 ($patronymic === null) ||
-                preg_match(self::STRING_REGEX, $patronymic)
+                preg_match(self::USER_NAME_REGEX, $patronymic)
             );
         if (!($checkCorrectFirstName && $checkCorrectLastName && $checkCorrectPatronymic)) {
             throw new IncorrectDataException("Full name is not correct");
@@ -43,7 +42,7 @@ class UserDataValidator
      */
     public function checkPassword(string $password): void
     {
-        if (!preg_match(self::VALIDATE_PASSWORD, $password)) {
+        if (!preg_match(self::USER_PASSWORD_REGEX, $password)) {
             throw new IncorrectDataException("Password is not correct");
         }
     }
@@ -51,10 +50,10 @@ class UserDataValidator
     /**
      * @throws IncorrectDataException
      */
-    public function checkUserResult(int $result): void
+    public function checkUserSummaryResult(int $summaryResult): void
     {
-        if ($result < 0 || $result > self::MAX_USER_RESULT) {
-            throw new IncorrectDataException("User result is not correct");
+        if ($summaryResult < 0) {
+            throw new IncorrectDataException("Summary result is not correct");
         }
     }
 }

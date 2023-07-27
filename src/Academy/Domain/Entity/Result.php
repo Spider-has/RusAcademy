@@ -21,8 +21,10 @@ class Result
         int $userScore,
         int $countOfTries
     ) {
-        $userDataValidator = new UserDataValidator();
-        $userDataValidator->checkUserResult($userResult);
+        $resultDataValidator = new ResultDataValidator();
+        $resultDataValidator->checkUserResult($userResult);
+        $resultDataValidator->checkUserScore($userScore);
+        $resultDataValidator->checkUserCountOfTries($countOfTries);
 
         $this->id = $resultId;
         $this->userId = $userId;
@@ -74,16 +76,25 @@ class Result
 
     public function setUserResult(int $userResult): void
     {
+        $resultDataValidator = new ResultDataValidator();
+        $resultDataValidator->checkUserResult($userResult);
+
         $this->userResult = $userResult;
     }
 
     public function setUserScore(int $userScore): void
     {
+        $resultDataValidator = new ResultDataValidator();
+        $resultDataValidator->checkUserScore($userScore);
+
         $this->userScore = $userScore;
     }
 
     public function setCountOfTries(int $countOfTries): void
     {
+        $resultDataValidator = new ResultDataValidator();
+        $resultDataValidator->checkUserCountOfTries($countOfTries);
+
         $this->countOfTries = $countOfTries;
     }
 }

@@ -114,10 +114,13 @@ class User
 
     public function setSummaryResult(int $summaryResult): void
     {
+        $userDataValidator = new UserDataValidator();
+        $userDataValidator->checkUserSummaryResult($summaryResult);
+
         $this->summaryResult = $summaryResult;
     }
 
-    public function appendGameToList(int $gameId): void
+    public function addGameToList(int $gameId): void
     {
         if (!in_array($gameId, $this->gamesList)) {
             $this->gamesList[] = $gameId;

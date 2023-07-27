@@ -25,4 +25,34 @@ class UserService
         $this->userRepository->store($user);
         return $userId;
     }
+
+    public function changeUserName(int $userId, string $firstName, string $lastName, ?string $patronymic): void
+    {
+        $user = $this->userRepository->get($userId);
+        $user->setName($firstName, $lastName, $patronymic);
+    }
+
+    public function changeUserEmail(int $userId, string $email): void
+    {
+        $user = $this->userRepository->get($userId);
+        $user->setEmail($email);
+    }
+
+    public function changeUserPassword(int $userId, string $password): void
+    {
+        $user = $this->userRepository->get($userId);
+        $user->setPassword($password);
+    }
+
+    public function changeSummaryResult(int $userId, string $result): void
+    {
+        $user = $this->userRepository->get($userId);
+        $user->setSummaryResult($result);
+    }
+
+    public function appendGameToList(int $userId, int $gameId): void
+    {
+        $user = $this->userRepository->get($userId);
+        $user->addGameToList($gameId);
+    }
 }
