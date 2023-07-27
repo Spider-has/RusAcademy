@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
+use App\Controller\UserPageController;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -18,6 +19,6 @@ $errorMiddleware = $app->addErrorMiddleware(!$isProduction, true, true);
 $twig = Twig::create(__DIR__ . '/../templates/', $isProduction ? ['cache' => __DIR__ . '/../var/cache/'] : []);
 $app->add(TwigMiddleware::create($app, $twig));
 
-$app->get('/', \App\Controller\UserPageController::class . ':userPage')->setName('userPage');
+$app->get('/', UserPageController::class . ':userPage')->setName('userPage');
 
 $app->run();

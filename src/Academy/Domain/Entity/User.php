@@ -2,6 +2,8 @@
 
 namespace App\Academy\Domain\Entity;
 
+use App\Om\Domain\Entity\UserDataValidator;
+
 class User
 {
     private int $id;
@@ -25,6 +27,11 @@ class User
         int $summaryResult,
         ?string $patronymic
     ) {
+        $userDataValidator = new UserDataValidator();
+        $userDataValidator->checkName($firstName, $lastName, $patronymic);
+        $userDataValidator->checkEmail($email);
+        $userDataValidator->checkPassword($password);
+
         $this->id = $userId;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -83,6 +90,9 @@ class User
 
     public function setName(string $firstName, string $lastName, ?string $patronymic): void
     {
+        $userDataValidator = new UserDataValidator();
+        $userDataValidator->checkName($firstName, $lastName, $patronymic);
+
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->patronymic = $patronymic;
@@ -90,11 +100,17 @@ class User
 
     public function setEmail(string $email): void
     {
+        $userDataValidator = new UserDataValidator();
+        $userDataValidator->checkEmail($email);
+
         $this->email = $email;
     }
 
     public function setPassword(string $password): void
     {
+        $userDataValidator = new UserDataValidator();
+        $userDataValidator->checkPassword($password);
+
         $this->password = $password;
     }
 
