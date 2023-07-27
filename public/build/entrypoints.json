@@ -1,0 +1,11 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_modules_es_object_define-property_js-node_modules_react-dom_clie-f2f794.js",
+        "/build/app.js"
+      ]
+    }
+  }
+}

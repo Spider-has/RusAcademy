@@ -7,12 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RusAcademy</title>
     {% block stylesheets %}
-    {% endblock %}
-    {% block javascript %}
+        {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
 <body>
-{% block content %}
+{% block body %}
+    <div id="root"></div>
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}
 </body>
 </html>
