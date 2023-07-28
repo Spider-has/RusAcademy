@@ -26,6 +26,7 @@ class UserServiceTest extends TestCase
     private const ERROR_USER_FIRST_NAME = "11322";
     private const ERROR_USER_EMAIL = "111@gmail.com";
     private const ERROR_USER_PASSWORD = "123456";
+    private const ERROR_USER_SUMMARY_RESULT = -10;
 
     public function testCreateUser(): void
     {
@@ -122,5 +123,6 @@ class UserServiceTest extends TestCase
         );
         $userService->changeUserEmail($userId, self::ERROR_USER_EMAIL);
         $userService->changeUserPassword($userId, self::ERROR_USER_PASSWORD);
+        $userService->changeSummaryResult($userId, self::ERROR_USER_SUMMARY_RESULT);
     }
 }

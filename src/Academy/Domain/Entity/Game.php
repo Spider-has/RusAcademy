@@ -13,6 +13,9 @@ class Game
         int $maxScore,
         array $userResultList
     ) {
+        $gameDataValidator = new GameDataValidator();
+        $gameDataValidator->checkMaxScore($maxScore);
+
         $this->id = $gameId;
         $this->maxScore = $maxScore;
         $this->userResultList = $userResultList;
@@ -35,6 +38,9 @@ class Game
 
     public function setMaxScore(int $maxScore): void
     {
+        $gameDataValidator = new GameDataValidator();
+        $gameDataValidator->checkMaxScore($maxScore);
+
         $this->maxScore = $maxScore;
     }
 
