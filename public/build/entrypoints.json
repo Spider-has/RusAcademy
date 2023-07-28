@@ -2,9 +2,9 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/build/runtime.efa5318b.js",
-        "/build/424.e5bfd0dc.js",
-        "/build/app.c393d33d.js"
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_modules_es_object_define-property_js-node_modules_react-dom_clie-f2f794.js",
+        "/build/app.js"
       ]
     }
   }

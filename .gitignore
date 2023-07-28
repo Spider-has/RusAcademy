@@ -3,6 +3,7 @@
 /coverage/
 /vendor/
 /node_modules
+/public/build/
 /logs/*
 !/logs/README.md
 .phpunit.result.cache
