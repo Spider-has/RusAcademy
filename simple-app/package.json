@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "node esbuild.js"
+  },
+  "dependencies": {
+    "@reatom/core": "^3.5.0",
+    "esbuild-sass-plugin": "^2.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.17",
+    "@types/react-dom": "^18.2.7",
+    "esbuild": "^0.18.17",
+    "esbuild-serve": "^1.0.1"
+  }
+}
