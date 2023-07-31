@@ -1,0 +1,127 @@
+body{
+  background-color: var(--text-oncolor-default);
+}
+
+.user-panel {
+  width: 26%;
+  min-width: 245px;
+  max-width: 488px;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--text-default);
+  color: var(--text-oncolor-default);
+  letter-spacing: 1px;
+
+  &__wrapper {
+    height: 71%;
+    margin-top: 139px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font: var(--text-header-default);
+    margin-top: 27px;
+    margin-bottom: 13px;
+  }
+
+  &__subtitle {
+    font: var(--text-text-default);
+  }
+
+  &__text {
+    font: var(--text-text-small);
+    margin-top: 2px;
+  }
+
+  &__user-score {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: baseline;
+  }
+
+  &__score-text {
+    font: var(--text-points-default);
+    color: var(--text-points-normal);
+  }
+
+  &__user-navigation {
+    height: 52%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__user-navigation-activity {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+}
+
+.main-home-area{
+  width: 74%;
+
+  min-height: 100vh;
+  background-color: var(--text-oncolor-default);
+
+  &__wrapper{
+    margin: 114px 0 113px 65px;
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  &__section{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__section-title{
+    font: var(--text-header-default);
+    color: var(--text-default);
+  }
+
+  &__section-title-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  &__activity-area{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.game-cards-area{
+  width: auto;
+  max-width: 605px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 25px;
+  row-gap: 16px;
+
+}
+
+.home-page{
+  display: flex;
+  flex-direction: row;
+}

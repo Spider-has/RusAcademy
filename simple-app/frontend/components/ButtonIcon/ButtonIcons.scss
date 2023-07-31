@@ -1,0 +1,22 @@
+.button-icon{
+  &_default{
+    width: 26px;
+    height: 24px;
+  }
+  &_arrow{
+    width: 24px;
+
+  }
+}
+
+.background_button-icon{
+  width: 40px;
+  height: 40px;
+
+  background-color: var(--text-oncolor-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 20px;
+}

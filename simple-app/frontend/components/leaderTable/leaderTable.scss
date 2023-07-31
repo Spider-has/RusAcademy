@@ -1,0 +1,36 @@
+.table-cell{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  color: var(--text-default);
+
+  &__sequence-text{
+    font: var(--text-numbers-default);
+    margin-right: 17px;
+    width: 23px;
+  }
+
+  &__name{
+    font: var(--text-text-default);
+    margin-left: 25px;
+    margin-right: 45px;
+  }
+
+  &__score{
+    font: var(--text-points-default);
+    color: var(--text-points-normal);
+  }
+}
+
+.leader-table{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 34px 56px 35px 40px;
+
+  border-radius: 25px;
+  border: 1px solid var(--text-border);
+  background: var(--text-buttons);
+}

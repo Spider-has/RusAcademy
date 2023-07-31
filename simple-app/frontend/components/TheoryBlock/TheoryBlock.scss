@@ -1,0 +1,32 @@
+.theory-cell{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 85px;
+  justify-content: space-between;
+
+  &__content{
+    max-width: 354px;
+    max-height: 67px;
+    overflow: hidden;
+  }
+}
+
+.theory-table{
+  display: flex;
+
+  padding: 38px 77px 38px 50px;
+
+  border-radius: 25px;
+  border: 1px solid var(--text-border);
+  background: var(--text-buttons);
+
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    font: var(--text-text-default);
+    color: var(--text-default);
+  }
+}

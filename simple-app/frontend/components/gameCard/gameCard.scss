@@ -1,0 +1,28 @@
+.game-card{
+  display: flex;
+  flex-direction: column;
+
+
+  gap: 4px;
+  padding: 25px 90px 38px 25px;
+
+  border-radius: 25px;
+  border: 1px solid var(--text-border);
+  background: var(--text-buttons);
+
+  color: var(--text-default);
+
+  &__text-wrapper{
+    width: 175px;
+    height: 95px;
+    overflow: hidden;
+  }
+
+  &__text{
+    font: var(--text-text-default);
+    max-height: 100px;
+    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: hidden;
+  }
+}

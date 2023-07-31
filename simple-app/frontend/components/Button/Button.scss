@@ -1,0 +1,23 @@
+.button{
+  border: none;
+  border-radius: 0;
+
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+
+  font: var(--text-text-default);
+  color: var(--text-oncolor-default);
+
+  &_gradient{
+    display: inline;
+    border-radius: 10px;
+    background: var(--buttons, linear-gradient(180deg, #6670E3 0%, #828CF4 100%));
+
+    color: var(--text-buttons);
+
+    padding: 10px 35px;
+    text-align: center;
+  }
+}

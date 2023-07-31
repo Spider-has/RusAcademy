@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: 0;
+}
+
+@font-face {
+  font-family: 'Literal';
+  src: url('fonts/Literal-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root{
+
+  --text-default: #002154;
+  --text-buttons: #FFFFFF;
+  --text-oncolor-default: #F4F7FD;
+  --text-points-normal: #F5AD91;
+  --text-points-dark: #E86961;
+  --text-border: #E6E6E6;
+  --status-critical: #E86961;
+  --status-success: #67C38C;
+
+  --text-header-default: 700 23px/23px "Raleway", sans-serif;
+  --text-text-default: 400 16px/23px "Raleway", sans-serif;
+  --text-text-small: 400 12px/23px "Raleway", sans-serif;
+  --text-points-default: 700 16px/23px "Raleway", sans-serif;
+  --text-points-large: 700 23px/23px "Raleway", sans-serif;
+  --text-numbers-default: 400 20px/23px "Literal", sans-serif;
+}
