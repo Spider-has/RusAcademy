@@ -214,3 +214,16 @@ export const getTheoryCardsList = action((ctx) => {
 onConnect(theoryCardsListAtom, (ctx) => {
     getTheoryCardsList(ctx)
 })
+
+export const getAtomData = action((ctx, atomObj, url) => {
+    isLoadingAtom(ctx, true);
+    ctx.schedule(async () => {
+        const dataObj = await fetchGetRequest(url);
+        if(dataObj) 
+            atomObj(ctx, dataObj)
+        else
+            atomObj(ctx, undefined);
+        console.log(ctx.get(atomObj))
+        isLoadingAtom(ctx, false)
+    })
+})
