@@ -14,9 +14,19 @@
   height: 40px;
 
   background-color: var(--text-oncolor-default);
+  background-image: url(./Icons/blue-arrow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   border-radius: 20px;
+
+  transition: all 0.2s ease-in;
+  &:hover{
+    background-color: rgba(246, 176, 145, 0.16);
+    background-image: url(./Icons/hover-arrow.svg);
+    transition: all 0.2s ease-in;
+  }
 }

@@ -4,7 +4,7 @@
 
 
   gap: 4px;
-  padding: 25px 90px 38px 25px;
+  padding: 25px 90px 25px 25px;
 
   border-radius: 25px;
   border: 1px solid var(--text-border);
@@ -25,4 +25,16 @@
     white-space: normal;
     overflow: hidden;
   }
+}
+
+.game-cards-area{
+  width: auto;
+  max-width: 605px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 25px;
+  row-gap: 16px;
+
 }

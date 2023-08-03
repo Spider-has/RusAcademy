@@ -109,18 +109,6 @@ body{
   }
 }
 
-.game-cards-area{
-  width: auto;
-  max-width: 605px;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  column-gap: 25px;
-  row-gap: 16px;
-
-}
-
 .home-page{
   display: flex;
   flex-direction: row;

@@ -3,29 +3,25 @@ import { Avatar } from "../../components/avatar/avatar";
 import { Button } from "../../components/Button/Button";
 import React from 'react';
 import {LeaderTable} from "../../components/leaderTable/leaderTable";
-import {GameCard} from "../../components/gameCard/gameCard";
+import {GameCardsList} from "../../components/gameCard/gameCard";
 import {TheoryTable} from "../../components/TheoryBlock/TheoryBlock";
+import {logInUserAtom} from "../../utility/model/model"
+import { useAtom } from '@reatom/npm-react';
 
-interface UserPanelProps {
-    studentFullName: string;
-    studentClass: number;
-    studentEmail: string;
-    studentScore: number;
-}
-
-const UserPanel = (props: UserPanelProps) => {
+const UserPanel = () => {
+    const [logInUser] = useAtom(logInUserAtom);
     return (
         <header className="user-panel">
             <div className = "user-panel__wrapper">
                 <div className="user-panel__user-info">
                     <Avatar type={"light"} size={"large"} withCrown={false} />
-                    <h1 className="user-panel__title">{props.studentFullName}</h1>
-                    <h2 className="user-panel__subtitle">Ученик {props.studentClass} класса</h2>
-                    <span className="user-panel__text">{props.studentEmail}</span>
+                    <h1 className="user-panel__title">{logInUser.surname} {logInUser.name}</h1>
+                    <h2 className="user-panel__subtitle">Ученик {logInUser.class} класса</h2>
+                    <span className="user-panel__text">{logInUser.email}</span>
                 </div>
                 <div className="user-panel__user-score">
                     <h2 className="user-panel__subtitle">Всего баллов: </h2>
-                    <span className="user-panel__score-text">{props.studentScore}</span>
+                    <span className="user-panel__score-text">{logInUser.totalScore}</span>
                 </div>
                 <div className="user-panel__user-navigation">
                     <div className="user-panel__user-navigation-activity">
@@ -69,11 +65,7 @@ const MainArea = () => {
                     <h2 className="main-home-area__section-title">Игры по темам</h2>
                     <Button type={'only icon'} content={''} isLinked={true} iconType={'arrow'}/>
                 </div>
-                <div className="game-cards-area">
-                    <GameCard content={"Гласные в корнях с чередованием"}/>
-                    <GameCard content={"НЕ с прилагательными и существительными"}/>
-                    <GameCard content={"Ё-О после шипящих в корнях, суффиксах и окончаниях"}/>
-                </div>
+                <GameCardsList/>
             </section>
             <section className="main-home-area__section">
                 <div className="main-home-area__section-title-wrapper">
@@ -92,10 +84,7 @@ const MainArea = () => {
 const HomePage = () => {
     return (
         <div className="home-page">
-            <UserPanel studentFullName={"Иванов Артем"}
-                studentClass={5}
-                studentEmail={"ivanovartem2010@gmail.com"}
-                studentScore={50} />
+            <UserPanel/>
             <MainArea/>
         </div>
     )

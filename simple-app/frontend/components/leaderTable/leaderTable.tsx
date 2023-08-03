@@ -1,10 +1,13 @@
 import './leaderTable.scss'
-import React from "react";
+import React, { ReactNode } from "react";
 import {Avatar} from "../avatar/avatar";
+import { topStudentsListAtom } from '../../utility/model/model';
+import { useAtom } from '@reatom/npm-react';
 
 interface TableCellProps {
     isFirst?: boolean,
     studentAvatar?: string,
+    id?: string,
     sequenceNum: number,
     studentFullName: string,
     studentScore: number,
@@ -37,18 +40,19 @@ const TableCell = (props: TableCellProps) => {
 
 
 export const LeaderTable = () => {
-    let LeaderTableCells = [];
-    for (let i = 1; i <= 10; i++){
-        LeaderTableCells[i] = <TableCell sequenceNum={i} studentFullName={"Иванов Артем"} studentScore={50} isFirst={false}/>
-        if(i === 1){
-            LeaderTableCells[i] = <TableCell sequenceNum={i} studentFullName={"Иванов Артем"} studentScore={50} isFirst={true}/>
-        }
-    }
-
+    const [topStudentsList] = useAtom(topStudentsListAtom)
     return(
         <div className="leader-table">
             {
-                LeaderTableCells
+                topStudentsList.map(({name, surname, id, totalScore}, index) => 
+                <>
+                   { index === 0 ?
+                        <TableCell isFirst = {true} sequenceNum={index + 1} studentFullName={surname + " " + name} studentScore={totalScore} id = {id}/>
+                    :
+                        <TableCell sequenceNum={index + 1} studentFullName={surname + " " + name} studentScore={totalScore} id = {id}/>
+                    }
+                </> 
+                )
             }
         </div>
     )

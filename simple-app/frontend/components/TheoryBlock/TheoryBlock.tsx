@@ -1,6 +1,8 @@
 import './TheoryBlock.scss';
 import {Button} from "../Button/Button";
 import React from "react";
+import { theoryCardsListAtom } from '../../utility/model/model';
+import { useAtom } from '@reatom/npm-react';
 
 interface theoryCellProps {
     id?: string;
@@ -12,24 +14,23 @@ const TheoryCell = (props: theoryCellProps) => {
     return(
         <div className="theory-cell">
             <span className="theory-cell__content">{props.content}</span>
-            <Button type={'only icon'} content={''} isLinked={true} iconType={'arrow-blue'} withBackground={true}/>
+            <Button type={'only icon'} content={''} isLinked={true} iconType={'arrow-blue'} withBackground={true} id = {props.id}/>
         </div>
     )
 }
 
 export const TheoryTable = () => {
+    const [theoryCardsList] = useAtom(theoryCardsListAtom)
     return(
         <div className="theory-table">
             <ol className="theory-table__list">
-                <li>
-                    <TheoryCell sequenceNum={1} content={"Гласные в корнях с чередованием"}/>
-                </li>
-                <li>
-                    <TheoryCell sequenceNum={1} content={"Ё-О после шипящих в корнях, суффиксах и окончаниях"}/>
-                </li>
-                <li>
-                    <TheoryCell sequenceNum={1} content={"НЕ с прилагательными и существительными"}/>
-                </li>
+                {
+                    theoryCardsList.map(({title, id}) => 
+                    <li>
+                        <TheoryCell sequenceNum={1} content={title} id = {id}/>
+                    </li>
+                    )
+                }
             </ol>
         </div>
     )

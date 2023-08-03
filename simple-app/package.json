@@ -4,6 +4,8 @@
   },
   "dependencies": {
     "@reatom/core": "^3.5.0",
+    "@reatom/framework": "^3.4.9",
+    "@reatom/npm-react": "^3.4.2",
     "esbuild-sass-plugin": "^2.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

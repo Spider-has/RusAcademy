@@ -1,7 +1,7 @@
 import './ButtonIcons.scss'
 import React from 'react';
 // @ts-ignore
-import profile from './Icons/profile.svg'; import exit from './Icons/exit.svg'; import achievement from './Icons/achievement.svg'; import arrow from './Icons/arrow.svg'; import arrowBlue from './Icons/blue-arrow.svg'
+import profile from './Icons/profile.svg'; import exit from './Icons/exit.svg'; import achievement from './Icons/achievement.svg'; import arrow from './Icons/arrow.svg'; import arrowBlue from './Icons/blue-arrow.svg'; import hoverArrow from "./Icons/hove-arrow.svg"
 
 interface ButtonIconProps {
     type: 'house' | 'exit' | 'achievement' | 'arrow' | 'arrow-blue' | undefined;
@@ -41,9 +41,9 @@ export const ButtonIcon = (props: ButtonIconProps) => {
         {
             background ?
                 <div className="background_button-icon">
-                    <img className = {"button-icon button-icon_" + mod}
+                    {/* <img className = {"button-icon button-icon_" + mod}
                          src = {src}
-                         alt = {props.type + "icon"}/>
+                         alt = {props.type + "icon"}/> */}
                 </div>
                 :
             <img className = {"button-icon button-icon_" + mod}
