@@ -29,19 +29,22 @@ const UserPanel = () => {
                             iconType={"achievement"}
                             onClick={() => { }}
                             content={"Достижения"}
-                            isLinked={true} />
+                            isLinked={true}
+                            id = "achive" />
                         <Button type={'with icon'}
                             iconType={"house"}
                             onClick={() => { }}
                             content={"Личный кабинет"}
-                            isLinked={true} />
+                            isLinked={true} 
+                            id = "profile" />
                     </div>
                     <div>
                         <Button type={'with icon'}
                             iconType={"exit"}
                             onClick={() => { }}
                             content={"Выход из аккаунта"}
-                            isLinked={true} />
+                            isLinked={true} 
+                            id = "exit"/>
                     </div>
                 </div>
             </div>
