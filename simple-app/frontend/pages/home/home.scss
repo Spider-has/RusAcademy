@@ -19,7 +19,7 @@ body{
 
   &__wrapper {
     height: 71%;
-    margin-top: 139px;
+    margin-top: 29%;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -73,15 +73,16 @@ body{
 }
 
 .main-home-area{
-  width: 74%;
+  width: 75%;
 
   min-height: 100vh;
   background-color: var(--text-oncolor-default);
 
   &__wrapper{
-    margin: 114px 0 113px 65px;
+    margin: 8% 0 0 65px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap-reverse;
     gap: 60px;
   }
 
