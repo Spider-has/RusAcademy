@@ -1,0 +1,35 @@
+.main-theory-area {
+    width: 75%;
+
+    min-height: 100vh;
+    background-color: var(--text-oncolor-default);
+
+    &__wrapper {
+        margin: 8% 8% 0 65px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__section-title{
+        font: var(--text-header-default);
+        color: var(--text-default);
+      }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+    }
+
+    &__theory-block-section{
+        min-width: 500px;
+        width: 50%;
+    }
+}
+
+.theory-page {
+    display: flex;
+    flex-direction: row;
+}

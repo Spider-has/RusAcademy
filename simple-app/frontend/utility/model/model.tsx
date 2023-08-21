@@ -1,6 +1,6 @@
 import { atom, action } from "@reatom/core";
 import {fetchGetRequest} from "../fetchRequest/fetchRequest"
-import {logInUserUrl, topStudentsUrl, gameCardsListUrl, theoryCardsListUrl} from "../../api/utilities"
+import {logInUserUrl, topStudentsUrl, gameCardsListUrl, theoryCardsListUrl, theoryBlockUrl} from "../../api/utilities"
 import {onConnect} from "@reatom/framework";
 
 export const isLoadingAtom = atom(false, "isLoadingAtom");
@@ -198,6 +198,7 @@ const initialTheoryCardList: theoryCardsList = [
     }
 ]
 
+
 export const theoryCardsListAtom = atom(initialTheoryCardList, 'theoryCardsListAtom');
 
 export const getTheoryCardsList = action((ctx) => {
@@ -214,6 +215,46 @@ export const getTheoryCardsList = action((ctx) => {
 onConnect(theoryCardsListAtom, (ctx) => {
     getTheoryCardsList(ctx)
 })
+
+type theoryBlockElement = {
+    type: "header" | "subtitle" | "main-text" | "important-text",
+    content: string, 
+}
+type theoryBlock = Array<theoryBlockElement>
+
+const initialTheoryBlock: theoryBlock = [
+    {
+        type: "header",
+        content: "Гласные в корнях с чередованием"
+    },
+    {
+        type: "subtitle",
+        content: "Структура слов"
+    },
+    {
+        type: "main-text",
+        content: "Повседневная практика показывает, что начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации дальнейших направлений развития. Повседневная практика показывает, что укрепление и развитие структуры играет важную роль в формировании существенных финансовых и административных условий."
+    },
+    {
+        type: "subtitle",
+        content: "Что такое чередование?"
+    },
+    {
+        type: "important-text",
+        content: "Чередование — парадигматическое отношение между единицами одного уровня языка, состоящее в их способности заменять друг друга на одном и том же месте в структуре единицы"
+    },
+    {
+        type: "main-text",
+        content: "Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке направлений прогрессивного развития."
+    }
+]
+
+export const theoryBlockAtom = atom(initialTheoryBlock, 'theoryBlock');
+
+onConnect(theoryBlockAtom, (ctx) => {
+    getAtomData(ctx, theoryBlockAtom, theoryBlockUrl)
+})
+
 
 export const getAtomData = action((ctx, atomObj, url) => {
     isLoadingAtom(ctx, true);
