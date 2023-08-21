@@ -1,0 +1,55 @@
+.game-start{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    background: url(./images/stars-background.svg), linear-gradient(180deg, #001535 0%, #5179F5 100%) ;
+}
+
+
+.header{
+    padding: 90px 0 0 90px;
+}
+
+.main-content{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 119px 0 0 15%; 
+    gap: 69px;
+
+    &__text{
+        max-width: 766px;
+        font: var(--text-header-large);
+        background:  lightgray 50% / cover no-repeat;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.rocket-area{
+    z-index: 0;
+    position: absolute;
+    right: 20%;
+    top: 23%;
+    height: 604px;
+
+    display: flex;
+    align-items: end;
+}
+
+.planet{
+    display: block;
+}
+
+.rocket{
+    display: block;
+    position: absolute;
+    left: -42px;
+    top: 0px;
+}

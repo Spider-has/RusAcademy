@@ -29,6 +29,7 @@ func main() {
 	mux := mux.NewRouter()              // Сущность Mux, которая позволяет маршрутизировать запросы к определенным обработчикам,
 	mux.HandleFunc("/home", index(dbx)) // Прописываем, что по пути /home выполнится наш index, отдающий нашу страницу
 	mux.HandleFunc("/theory", index(dbx))
+	mux.HandleFunc("/gameStart", index(dbx))
 
 	mux.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 
