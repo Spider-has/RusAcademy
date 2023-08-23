@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "node esbuild.js"
+    "dev": "node esbuild.js",
+    "watch": "node esbuild-watcher.js"
   },
   "dependencies": {
     "@reatom/core": "^3.5.0",
